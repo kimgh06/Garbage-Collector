@@ -1,0 +1,64 @@
+#include<stdio.h>
+int a[10] = { 0 };
+void pc() {
+	int n = 0;
+	while (n == 0) {
+		printf("자동차 모델 번호:\t1\t2\t3\t4\t5\t6\t7\t8\t9\t10\n");
+		printf("자동차 모델 현황:\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\t%d\n", a[1], a[2], a[3], a[4], a[5], a[6], a[7], a[8], a[9], a[0]);
+		printf("자동차 모델 선택: ");
+		scanf_s("%d", &n);
+		switch (n % 10) {
+		case 0:
+			if (a[n % 10] == 1) { printf("이미 예약된 모델입니다. 다시 입력하세요.\n"); pc(); break; }
+			else a[n % 10]++; printf("예약 완료됨\n"); break;
+		case 1:
+			if (a[n % 10] == 1) { printf("이미 예약된 모델입니다. 다시 입력하세요.\n"); pc(); break; }
+			else a[n % 10]++; printf("예약 완료됨\n"); break;
+		case 2:
+			if (a[n % 10] == 1) { printf("이미 예약된 모델입니다. 다시 입력하세요.\n"); pc(); break; }
+			else a[n % 10]++; printf("예약 완료됨\n"); break;
+		case 3:
+			if (a[n % 10] == 1) { printf("이미 예약된 모델입니다. 다시 입력하세요.\n"); pc(); break; }
+			else a[n % 10]++; printf("예약 완료됨\n"); break;
+		case 4:
+			if (a[n % 10] == 1) { printf("이미 예약된 모델입니다. 다시 입력하세요.\n"); pc(); break; }
+			else a[n % 10]++; printf("예약 완료됨\n"); break;
+		case 5:
+			if (a[n % 10] == 1) { printf("이미 예약된 모델입니다. 다시 입력하세요.\n"); pc(); break; }
+			else a[n % 10]++; printf("예약 완료됨\n"); break;
+		case 6:
+			if (a[n % 10] == 1) { printf("이미 예약된 모델입니다. 다시 입력하세요.\n"); pc(); break; }
+			else a[n % 10]++; printf("예약 완료됨\n"); break;
+		case 7:
+			if (a[n % 10] == 1) { printf("이미 예약된 모델입니다. 다시 입력하세요.\n"); pc(); break; }
+			else a[n % 10]++; printf("예약 완료됨\n"); break;
+		case 8:
+			if (a[n % 10] == 1) { printf("이미 예약된 모델입니다. 다시 입력하세요.\n"); pc(); break; }
+			else a[n % 10]++; printf("예약 완료됨\n"); break;
+		case 9:
+			if (a[n % 10] == 1) { printf("이미 예약된 모델입니다. 다시 입력하세요.\n"); pc(); break; }
+			else a[n % 10]++; printf("예약 완료됨\n"); break;
+		}
+	}
+}
+int main() {
+	char c;
+	while (1) {
+		printf(">>자동차 모델을 선택하시겠습니까?\n'y' 또는 'n'를 눌러주세요: ");
+		scanf_s("%c", &c);
+		if (c == 'y' || c == 'Y') {
+			pc();
+			continue;
+		}
+		else if (c == 'n' || c == 'N') {
+			printf("자동차모델 NO.");
+			for (int i = 1; i < 10; i++) {
+				if (a[i] == 1) printf("[%d]", i);
+			}
+			if (a[0] == 1) printf("[10]");
+			printf(" 예약 후 프로그램 종료");
+			break;
+		}
+		else printf("\nerror: 'y' 또는 'n'를 눌러주세요\n\n");
+	}
+}
